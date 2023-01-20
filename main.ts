@@ -3,6 +3,7 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onGesture(Gesture.ScreenDown, function () {
     shake = 0
+    basic.clearScreen()
 })
 input.onButtonPressed(Button.AB, function () {
     basic.clearScreen()
