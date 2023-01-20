@@ -1,16 +1,20 @@
 input.onButtonPressed(Button.A, function () {
-    num1 = randint(1, 10)
+    basic.showIcon(IconNames.Heart)
+})
+input.onGesture(Gesture.ScreenDown, function () {
+    shake = 0
 })
 input.onButtonPressed(Button.AB, function () {
-	
+    basic.clearScreen()
+    num1 = randint(1, 50)
+    basic.showNumber(num1)
+    basic.clearScreen()
 })
 input.onButtonPressed(Button.B, function () {
-	
+    basic.showIcon(IconNames.SmallHeart)
 })
 input.onGesture(Gesture.Shake, function () {
-    for (let index = 0; index < 4; index++) {
-        wave.scrollImage(1, 200)
-    }
+    shake = 1
 })
 input.onLogoEvent(TouchButtonEvent.Touched, function () {
     basic.showLeds(`
@@ -31,11 +35,17 @@ input.onLogoEvent(TouchButtonEvent.Released, function () {
         `)
 })
 let num1 = 0
-let wave: Image = null
-wave = images.createBigImage(`
+let shake = 0
+shake = 0
+let wave = images.createBigImage(`
     . . . . . . . . . .
-    . . . . . . . # . .
-    . . # . . . # . # .
-    . # . # . # . . . #
-    # . . . # . . . . .
+    . . . . . . . . . .
+    . . # . . . # . . .
+    . # . # . # . # . .
+    # . . . # . . . # #
     `)
+basic.forever(function () {
+    if (shake == 1) {
+        wave.scrollImage(1, 200)
+    }
+})
