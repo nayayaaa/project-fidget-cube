@@ -42,8 +42,8 @@ let wave = images.createBigImage(`
     . . . . . . . . . .
     . . . . . . . . . .
     . . # . . . # . . .
-    . # . # . # . # . .
-    # . . . # . . . # #
+    . # . # . # . # . #
+    # . . . # . . . # .
     `)
 basic.forever(function () {
     if (shake == 1) {
