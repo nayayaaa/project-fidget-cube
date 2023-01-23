@@ -2,8 +2,8 @@ input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Heart)
 })
 input.onGesture(Gesture.ScreenDown, function () {
-    shake = 0
     basic.clearScreen()
+    shake = 0
 })
 input.onButtonPressed(Button.AB, function () {
     basic.clearScreen()
